@@ -1,16 +1,11 @@
-n, m = input().split(" ")
-
-n = int(n)
-m = int(m)
+n, m = list(map(int, input().split(" ")))
 
 server_map = {}
 
-for i in range(n):
+for _ in range(n):
     server, ip = input().split(" ")
     server_map[ip] = server
 
-for i in range(m):
+for _ in range(m):
     cmd, ip = input().split(" ")
-    ip = ip [0:len(ip)-1]
-    srvr = server_map[ip]
-    print(f"{cmd} {ip}; #{server_map[ip]}")
+    print(f"{cmd} {ip} #{server_map[ip[0:-1]]}")
